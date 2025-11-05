@@ -34,7 +34,7 @@ type Reminder = {
 
 const paymentSteps: Step[] = [
   {
-    title: "Choose amount",
+    title: "Choose method of payment",
     description: "Pay in full or split across monthly installments.",
     state: "complete",
   },
@@ -86,19 +86,20 @@ const orderTimeline: OrderCheckpoint[] = [
 const reminders: Reminder[] = [
   {
     channel: "Email",
-    message: "Detailed delivery itinerary + portal link for rescheduling.",
-    schedule: "Sent Apr 30 at 9:15 AM",
+    message: "Select day and time for your delivery",
+    // schedule: "Sent Apr 30 at 9:15 AM",
+    schedule: "Delivery includes an in-home fitting and demo of your pump with a certified NumaCare technician.",
   },
   {
     channel: "SMS",
     message: "24-hour reminder with quick reschedule actions.",
     schedule: "Scheduled for May 5 at 9:00 AM",
   },
-  {
-    channel: "Portal",
-    message: "Live chat opens 1 hour before your fitting appointment.",
-    schedule: "Available May 6 at 9:30 AM",
-  },
+  // {
+  //   channel: "Portal",
+  //   message: "Live chat opens 1 hour before your fitting appointment.",
+  //   schedule: "Available May 6 at 9:30 AM",
+  // },
 ];
 
 const alternateSlots = [
@@ -153,7 +154,8 @@ export default function Home() {
             <header className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <div className="badge-soft">Explanation of Benefits</div>
-                <h2 className="mt-3 text-2xl font-semibold text-slate-900">Smart knee brace coverage summary</h2>
+                {/* <h2 className="mt-3 text-2xl font-semibold text-slate-900">Smart knee brace coverage summary</h2> */}
+                <h2 className="mt-3 text-2xl font-semibold text-slate-900">Pump coverage summary</h2>
                 <p className="mt-2 text-sm text-slate-600">
                   This device has been fully approved by your insurance partner. Review the
                   breakdown before you confirm payment.
@@ -206,11 +208,11 @@ export default function Home() {
             </header>
 
             <div className="rounded-xl border border-primary/10 bg-primary-muted p-4 text-primary-dark">
-              <p className="text-xs uppercase">Remaining balance</p>
+              <p className="text-xs uppercase">Remaining balance to fill prescription</p>
               <p className="mt-1 text-3xl font-semibold text-slate-900">$300.00</p>
-              <p className="mt-1 text-sm text-slate-600">
-                Pay today or set up 3 payments of <strong className="font-semibold">$100</strong>.
-              </p>
+              {/* <p className="mt-1 text-sm text-slate-600"> */}
+              {/*   Pay today or set up 3 payments of <strong className="font-semibold">$100</strong>. */}
+              {/* </p> */}
             </div>
 
             <div>
@@ -243,11 +245,11 @@ export default function Home() {
 
             <div className="mt-auto flex flex-col gap-3">
               <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-primary-dark">
-                Settle balance now <ArrowUpRight className="h-4 w-4" />
+                Place your order to fill prescription <ArrowUpRight className="h-4 w-4" />
               </button>
-              <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary">
-                Schedule recurring payments
-              </button>
+              {/* <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary"> */}
+              {/*   Schedule recurring payments */}
+              {/* </button> */}
             </div>
           </aside>
         </section>
@@ -276,18 +278,21 @@ export default function Home() {
                 <p className="text-xs uppercase text-slate-500">Arrives</p>
                 <p className="text-lg font-semibold text-slate-900">May 6 · 9:30-10:30 AM</p>
                 <p className="text-sm text-slate-600">
-                  Your device ships overnight with live tracking enabled at 7:00 AM.
+                  This is the date and time of your delivery in-home fitting and demo with your NumaCare certified technician.
                 </p>
               </div>
               <div className="surface-muted flex flex-col gap-3 p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
                   <Clock className="h-4 w-4 text-primary" aria-hidden />
-                  Specialist demo
+                  NumaCare Certified Technician
                 </div>
-                <p className="text-xs uppercase text-slate-500">Coach</p>
-                <p className="text-lg font-semibold text-slate-900">Alex Morgan, CPO</p>
+                {/* <p className="text-xs uppercase text-slate-500">Coach</p> */}
+                <p className="text-lg font-semibold text-slate-900">Travis Davenport, Certified DME</p>
+                {/* <p className="text-sm text-slate-600"> */}
+                {/*   30-minute guided fitting with mobility coaching and remote monitoring set-up. */}
+                {/* </p> */}
                 <p className="text-sm text-slate-600">
-                  45-minute guided fitting with mobility coaching and remote monitoring set-up.
+                  Delivery of prescription and 30-minute in-home fitting and demo of pump and accessories.
                 </p>
               </div>
             </div>
@@ -315,7 +320,7 @@ export default function Home() {
             <header className="flex items-start justify-between">
               <div>
                 <div className="badge-soft">Stay informed</div>
-                <h2 className="mt-2 text-xl font-semibold text-slate-900">Reminders & follow up</h2>
+                <h2 className="mt-2 text-xl font-semibold text-slate-900">Schedule your delivery</h2>
               </div>
               <MessageCircle className="h-10 w-10 text-primary" aria-hidden />
             </header>
