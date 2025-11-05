@@ -3,19 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-slate-50 text-slate-900 font-sans antialiased;
+}
+
+a {
+  @apply text-primary transition-colors duration-150;
+}
+
+a:hover {
+  @apply text-primary-dark;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-slate-200 bg-white/90 shadow-card backdrop-blur;
+}
+
+.badge-soft {
+  @apply inline-flex items-center gap-2 rounded-full bg-primary-muted px-4 py-1 text-xs font-medium text-primary;
+}
+
+.surface-muted {
+  @apply rounded-xl border border-slate-200 bg-slate-50;
 }
